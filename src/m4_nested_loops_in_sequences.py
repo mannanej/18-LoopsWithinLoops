@@ -116,9 +116,13 @@ def multiply_numbers(sequence_of_lists):
        and the elements of the lists can be multiplied by an integer.
        [FYI: This 'can be multiplied ...' is an example of DUCK TYPING.]
     """
+    for k in range(len(sequence_of_lists)):
+        newlist = sequence_of_lists[k]
+        for j in range(len(newlist)):
+            newlist[j] = newlist[j] * (k + 1)
 
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #  ** READ THE TESTS that have been written for you (ABOVE).
     #  ** ASK QUESTIONS if you do not understand the TESTS (ABOVE).
     #
@@ -134,7 +138,7 @@ def multiply_numbers(sequence_of_lists):
 def run_test_sum_numbers():
     """ Tests the    sum_numbers    function. """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement this TEST function.
+    # DONE: 3. Implement this TEST function.
     #   It TESTS the  sum_numbers  function defined below.
     #   Include at least **   3   ** tests (we wrote two for you).
     # ------------------------------------------------------------------
@@ -155,6 +159,21 @@ def run_test_sum_numbers():
 
     # TO DO 3 (continued): Add your ADDITIONAL test(s) here:
 
+    # Test 3:
+    expected = 5
+    answer = sum_numbers(([], [5], []))
+    print('Expected and actual are:', expected, answer)
+
+    # Test 4:
+    expected = 5
+    answer = sum_numbers(([], [5], []))
+    print('Expected and actual are:', expected, answer)
+
+    # Test 5:
+    expected = 5
+    answer = sum_numbers(([], [5], []))
+    print('Expected and actual are:', expected, answer)
+
 
 def sum_numbers(seq_seq):
     """
@@ -166,8 +185,15 @@ def sum_numbers(seq_seq):
     Preconditions:  the given argument is a sequences of sequences,
                     and each item in the subsequences is a number.
     """
+    total = 0
+    for k in range(len(seq_seq)):
+        newlist = seq_seq[k]
+        for j in range(len(newlist)):
+            total += newlist[j]
+    return total
+
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
 
@@ -217,6 +243,12 @@ def print_characters(sequence_of_strings):
        !
     Precondition:  the given argument is a sequence of strings.
     """
+    for k in range(len(sequence_of_strings)):
+        newseq = sequence_of_strings[k]
+        for j in range(len(newseq)):
+            print(newseq[j], end='')
+        print()
+
     # ------------------------------------------------------------------
     # TODO: 5. Implement and test this function.
     #  ** READ THE TESTS that have been written for you (ABOVE).
