@@ -3,8 +3,8 @@ This project demonstrates NESTED LOOPS (i.e., loops within loops)
 in the context of SEQUENCES OF SUB-SEQUENCES.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Eddie Mannan.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -116,6 +116,7 @@ def multiply_numbers(sequence_of_lists):
        and the elements of the lists can be multiplied by an integer.
        [FYI: This 'can be multiplied ...' is an example of DUCK TYPING.]
     """
+
     # ------------------------------------------------------------------
     # TODO: 2. Implement and test this function.
     #  ** READ THE TESTS that have been written for you (ABOVE).
