@@ -305,11 +305,11 @@ def print_characters_slanted(sequence_of_strings):
     for k in range(len(sequence_of_strings)):
         newseq = sequence_of_strings[k]
         for j in range(len(newseq)):
-            print(newseq[j], end='')
+            print(' ' * j, newseq[j], end='')
             print()
 
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #  ** READ THE TESTS that have been written for you (ABOVE).
     #  ** ASK QUESTIONS if you do not understand the TESTS (ABOVE).
     #
