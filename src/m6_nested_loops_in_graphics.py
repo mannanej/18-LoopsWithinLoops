@@ -79,6 +79,16 @@ def draw_L(window, circle, r, c):
       :type c: int
     and m and n are small, positive integers.
     """
+    newx = circle.center.x
+    newy = circle.center.y
+    offset = circle.radius * 2
+    for k in range(r):
+        for j in range(3):
+            newcircle = rg.Circle(rg.Point(newx, newy), circle.radius)
+            newcircle.fill_color = circle.fill_color
+            newcircle.attach_to(window)
+            window.render(0.1)
+            newx += offset
 
     # ------------------------------------------------------------------
     # TODO: 2. Implement and test this function.
@@ -121,6 +131,7 @@ def draw_wall_on_right(rectangle, n, window):
       :type window: rg.RoseWindow
     and n is a small, positive integer.
     """
+    
     # ------------------------------------------------------------------
     # TODO: 3. Implement and test this function.
     #     The testing code is already written for you (above).
