@@ -11,7 +11,7 @@ import rosegraphics as rg
 
 def main():
     """ Calls the other functions to demonstrate them. """
-    run_test_draw_L()
+    #run_test_draw_L()
     run_test_draw_wall_on_right()
 
 
@@ -79,19 +79,30 @@ def draw_L(window, circle, r, c):
       :type c: int
     and m and n are small, positive integers.
     """
-    newx = circle.center.x
-    newy = circle.center.y
     offset = circle.radius * 2
-    for k in range(r):
+    for k in range(r + 3):
+        newx = circle.center.x
+        newy = circle.center.y + (offset * k)
         for j in range(3):
             newcircle = rg.Circle(rg.Point(newx, newy), circle.radius)
             newcircle.fill_color = circle.fill_color
             newcircle.attach_to(window)
-            window.render(0.1)
+            window.render()
+            newx += offset
+    for i in range(3):
+        newx = circle.center.x + (offset * 3)
+        newy = circle.center.y + (offset * (i + r))
+        for t in range(c):
+            newcircle = rg.Circle(rg.Point(newx, newy), circle.radius)
+            newcircle.fill_color = circle.fill_color
+            newcircle.attach_to(window)
+            window.render()
             newx += offset
 
+
+
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
@@ -131,7 +142,25 @@ def draw_wall_on_right(rectangle, n, window):
       :type window: rg.RoseWindow
     and n is a small, positive integer.
     """
-    
+    newcorner1x = rectangle.corner_1.x
+    newcorner1y = rectangle.corner_1.y
+    newcorner2x = rectangle.corner_2.x
+    newcorner2y = rectangle.corner_2.y
+    offsetx = rectangle.get_width()
+    offsety = rectangle.get_height()
+    for k in range(n):
+        newcorner1x = rectangle.corner_1.x
+        newcorner2x = rectangle.corner_2.x
+        newcorner1y = newcorner1y + (offsety * k)
+        newcorner2y = newcorner2y + (offsety * k)
+        for j in range(k):
+            newcorner1x = newcorner1x
+            newcorner2x = newcorner2x
+            newrect = rg.Rectangle(rg.Point(newcorner1x, newcorner1y), rg.Point(newcorner2x, newcorner2y))
+            newrect.attach_to(window)
+            window.render()
+
+
     # ------------------------------------------------------------------
     # TODO: 3. Implement and test this function.
     #     The testing code is already written for you (above).
